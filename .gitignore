@@ -1,4 +1,4 @@
 # Exclude everything in this file from beeing pushed to the repo
 backend_override.tf
-*.tfstate
+*.tfstate*
 .terraform*
