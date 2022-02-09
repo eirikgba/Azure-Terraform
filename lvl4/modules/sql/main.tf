@@ -4,8 +4,9 @@ resource "azurerm_sql_server" "sqlWeb" {
     resource_group_name          = var.resource_group_name
     location                     = var.location
     version                      = var.sql_version
-    administrator_login          = ""
+    administrator_login          = "adminLogin"
     administrator_login_password = ""
+                                            //Must have a secure long Pasword!!!
 }
 
 
@@ -24,4 +25,6 @@ resource "azurerm_sql_database" "sqldb" {
     location            = var.location
     server_name         = var.sql_server_name
     edition             = var.db_edition
+
+    depends_on = [azurerm_sql_server.sqlWeb]
 }

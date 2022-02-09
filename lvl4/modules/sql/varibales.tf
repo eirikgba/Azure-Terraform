@@ -13,7 +13,7 @@ variable "location" {
 #SQL server
 variable "sql_server_name" {
     type    = string
-    default = "sql-server"
+    default = "eirikgbasqlserver"
 }
 
 variable "sql_version" {
@@ -24,7 +24,7 @@ variable "sql_version" {
 #Storage Account
 variable "sa_name" {
     type    = string
-    default = "storageaccount"
+    default = "storageactestbasicwebp"
 }
 
 variable "sa_acc_tier" {

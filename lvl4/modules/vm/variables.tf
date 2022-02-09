@@ -24,7 +24,7 @@ variable "size" {
 
 variable "admin_usrname" {
     type    = string
-    default = "admin"
+    default = "admin-eirikgb"
 }
 
 variable "publisher" {
