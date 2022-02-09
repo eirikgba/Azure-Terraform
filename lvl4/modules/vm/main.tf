@@ -1,6 +1,6 @@
 
-resource "azurerm_network_interface" "example" {
-    name                = "nic_1"
+resource "azurerm_network_interface" "nic" {
+    name                = "nic"
     location            = var.location
     resource_group_name = var.resource_group_name
 
@@ -18,7 +18,7 @@ resource "azurerm_linux_virtual_machine" "ubuntu-web" {
     size                        = var.size
     admin_username              = var.admin_usrname
     network_interface_ids       = [
-        azurerm_network_interface.nic_1.id,
+        azurerm_network_interface.nic.id,
     ]
     #file is used to install nginx
     #user_data                   = file("init.sh")

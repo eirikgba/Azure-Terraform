@@ -9,6 +9,3 @@ variable "location" {
     default = "norwayeast"
 }
 
-
-
-

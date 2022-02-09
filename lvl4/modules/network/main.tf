@@ -14,14 +14,14 @@ resource "azurerm_subnet" "subnet1" {
     address_prefixes        = var.subnet_prefixes
 }
 
-resource "azurerm_network_interface" "example" {
+resource "azurerm_network_interface" "nic" {
     name                = "nic-1"
     location            = var.location
     resource_group_name = var.resource_group_name
 
     ip_configuration {
         name                          = "Internal"
-        subnet_id                     = azurerm_subnet.example.id
+        subnet_id                     = azurerm_subnet.subnet1.id
         private_ip_address_allocation = "Dynamic"
     }
 }

@@ -1,5 +1,5 @@
 
-resource "azurerm_sql_server" "sql_web" {
+resource "azurerm_sql_server" "sqlWeb" {
     name                         = var.sql_server_name
     resource_group_name          = var.resource_group_name
     location                     = var.location
@@ -7,6 +7,7 @@ resource "azurerm_sql_server" "sql_web" {
     administrator_login          = ""
     administrator_login_password = ""
 }
+
 
 resource "azurerm_storage_account" "example" {
     name                     = var.sa_name
@@ -17,7 +18,7 @@ resource "azurerm_storage_account" "example" {
     }
 
 
-resource "azurerm_sql_database" "sql_db" {
+resource "azurerm_sql_database" "sqldb" {
     name                = var.db_name
     resource_group_name = var.resource_group_name
     location            = var.location

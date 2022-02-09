@@ -10,6 +10,12 @@ variable "location" {
     default     = ""
 }
 
+
+variable "subnet_id" {
+    type        = string
+    default     = ""
+}
+
 #VM variable
 variable "size" {
     type    = string
