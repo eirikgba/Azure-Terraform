@@ -1,4 +1,9 @@
-#Første terrafrom fil
+#Testing Terraform with Azure using hasicorp terraform documetation:
+#  https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine
+#To set up a basic VM
+
+
+#First terraform file
 #Provison a basic VM
 
 terraform {
