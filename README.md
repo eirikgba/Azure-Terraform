@@ -8,7 +8,7 @@ Directory Structure
 | lvl2  | Set up a Linux VM |
 | lvl3  | Set up a VM Scaleset runing Linux |
 | lvl4  | Set up a basic WebPage infra <br> (VM, SQL server & db) |
-| lvl5  | TBD |
+| lvl5  | Impoved WebPage <br> (AppService, SQL server & db, cache) |
 | lvl6  | TBD |
 
 
