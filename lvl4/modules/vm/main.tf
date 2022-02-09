@@ -20,6 +20,8 @@ resource "azurerm_linux_virtual_machine" "ubuntu-web" {
     network_interface_ids       = [
         azurerm_network_interface.nic_1.id,
     ]
+    #file is used to install nginx
+    #user_data                   = file("init.sh")
 
     admin_ssh_key {
         username    = var.admin_usrname
@@ -37,4 +39,5 @@ resource "azurerm_linux_virtual_machine" "ubuntu-web" {
         sku       = var.image_sku
         version   = "latest"
     }
+
 }
