@@ -5,7 +5,7 @@ resource "azurerm_sql_server" "sqlWeb" {
     location                     = var.location
     version                      = var.sql_version
     administrator_login          = "adminLogin"
-    administrator_login_password = ""                         //Must have a secure long Pasword!!!
+    administrator_login_password = "!testPassord12345!"                         //Must have a secure long Pasword!!!
 }
 
 
@@ -33,10 +33,13 @@ resource "azurerm_sql_virtual_network_rule" "sqlvnetrule" {
     resource_group_name = var.resource_group_name
     server_name         = var.sql_server_name
     subnet_id           = var.subnet_id
+    
+    depends_on = [azurerm_sql_server.sqlWeb]
 }
 
 
 #Redis Cache
+
 resource "azurerm_redis_cache" "example" {
     name                = var.cache_name
     location            = var.location
@@ -44,6 +47,11 @@ resource "azurerm_redis_cache" "example" {
     capacity            = var.cache_capacity
     family              = var.cache_family
     sku_name            = var.cache_sku
+    
+    private_static_ip_address = "192.168.1.125"
+    #subnet connection is only available when using the premium SKU
+    #The subnet can only contain the Azure cache for redis
+    #subnet_id          = 
 
     redis_configuration {
     }

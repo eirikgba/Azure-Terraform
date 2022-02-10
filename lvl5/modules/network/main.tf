@@ -12,6 +12,10 @@ resource "azurerm_subnet" "subnet1" {
                                 //or: azurerm_virtual_network.vnet1.name
     name                    = var.subnet_name
     address_prefixes        = var.subnet_prefixes
+
+    #To connect the sql to the subnet
+    service_endpoints       = ["Microsoft.Sql"]
+
     depends_on          = [azurerm_virtual_network.vnet1]
 }
 
