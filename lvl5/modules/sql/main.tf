@@ -5,7 +5,7 @@ resource "azurerm_sql_server" "sqlWeb" {
     location                     = var.location
     version                      = var.sql_version
     administrator_login          = "adminLogin"
-    administrator_login_password = "!testPassord12345!"                         //Must have a secure long Pasword!!!
+    administrator_login_password = ""                         //Must have a secure long Pasword!!!
 }
 
 
