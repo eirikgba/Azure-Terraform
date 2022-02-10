@@ -30,7 +30,8 @@ module "web_server" {
     location                    = var.location
     web_resource_group_name     = var.web_resource_group_name
     subnet_id                   = module.network.web_server_subnet_id
-
+    nic_id                      = module.network.web_server_nic_id 
+    
     depends_on                  = [azurerm_resource_group.web]
 }
 
@@ -39,8 +40,9 @@ module "web_db" {
     source                  = "./modules/webDatabase"
     location                = var.location
     web_resource_group_name = var.web_resource_group_name
-    
     subnet_id               = module.network.web_db_subnet_id
+    nic_id                  = module.network.web_db_nic_id   
+
     depends_on              = [azurerm_resource_group.web]
 }
 
@@ -50,6 +52,8 @@ module "web_lb" {
     location                = var.location
     web_resource_group_name = var.web_resource_group_name
     subnet_id               = module.network.web_lb_subnet_id
+    nic_id                  = module.network.web_lb_nic_id
+    
     depends_on              = [azurerm_resource_group.web]
 }
 
@@ -63,6 +67,8 @@ module "compute_windows" {
     location                    = var.location
     compute_resource_group_name = var.compute_resource_group_name
     subnet_id                   = module.network.compute_windows_subnet_id
+    nic_id                      = module.network.compute_windows_nic_id
+
     depends_on                  = [azurerm_resource_group.compute]
 }
 
@@ -72,6 +78,8 @@ module "compute_linux" {
     location                    = var.location
     compute_resource_group_name = var.compute_resource_group_name
     subnet_id                   = module.network.compute_linux_subnet_id
+    nic_id                      = module.network.compute_linux_nic_id
+
     depends_on                  = [azurerm_resource_group.compute]
 }
 
@@ -81,8 +89,11 @@ module "compute_ml" {
     location                    = var.location
     compute_resource_group_name = var.compute_resource_group_name
     subnet_id                   = module.network.compute_ml_subnet_id
+    nic_id                      = module.network.compute_ml_nic_id
+
     depends_on                  = [azurerm_resource_group.compute]
 }
+
 
 # Module for Cosmos DB - MongoDB
 module "compute_db" {
@@ -90,5 +101,7 @@ module "compute_db" {
     location                    = var.location
     compute_resource_group_name = var.compute_resource_group_name
     subnet_id                   = module.network.compute_db_subnet_id
+    nic_id                      = module.network.compute_db_nic_id
+    
     depends_on                  = [azurerm_resource_group.compute]
 }

@@ -19,3 +19,9 @@ variable "subnet_id" {
     default = ""
 }
 
+
+variable "nic_id" {
+    type    = string
+    default = ""
+}
+

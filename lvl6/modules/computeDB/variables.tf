@@ -18,3 +18,8 @@ variable "subnet_id" {
     type    = string
     default = ""
 }
+
+variable "nic_id" {
+    type    = string
+    default = ""
+}
