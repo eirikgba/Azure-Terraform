@@ -1,17 +1,17 @@
-resource "random_password" "password" {
+resource "random_string" "password" {
     length           = 16
     special          = true
 }
 
 resource "azurerm_windows_virtual_machine" "windows_vm" {
     name                = "Compute-windows-vm"
-    resource_group_name = azurerm_resource_group.example.name
-    location            = azurerm_resource_group.example.location
+    resource_group_name = var.compute_resource_group_name
+    location            = var.location
     size                = "Standard_F2"
     admin_username      = "adminuser"
-    admin_password      = random_password.password
+    admin_password      = random_string.password                //Must have 1 secure long Pasword!!!
     network_interface_ids = [
-        nic_id,
+        var.nic_id,
     ]
 
     os_disk {
