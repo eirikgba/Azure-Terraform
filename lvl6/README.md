@@ -4,7 +4,7 @@ Sett up a Web page with a LoadBalancer, 2 web servers, SQL-db and redis cache. <
 Set up a smal basic computing enviroment 
 
 ### Two resource groups.
-- One for a web page:
+- One for a web page(Vnet-web):
     - Load Balancer
     - 2 Web server (Linux)
     - SQL server
@@ -14,14 +14,21 @@ Set up a smal basic computing enviroment
         - database
         - web server
         - Loadbalancer
-- One for computing 
-    - 2 Linux server
-    - 2 Windows server
-    - ML compute instance
-    - 3 subnets 
-        - Linux
-        - Windows
-        - ML
+<br>
+- One for computing:
+    - VNet Computing
+        - 2 Linux server
+        - 2 Windows server
+        - ML compute instance
+        - 3 subnets 
+            - Linux
+            - Windows
+            - ML
+    - Vnet ComputeDB
+        - Cosmos DB 
+            - running MongoDB
 
 
+### Inrastructure Vizulized
+![level6-infra](/img/lvl6-infra-1.png)
 
