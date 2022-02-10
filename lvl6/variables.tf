@@ -8,3 +8,7 @@ variable "compute_resource_group_name" {
     default = "compute_resource_group"
 }
 
+variable "location" {
+    type    = string
+    default = "norwayeast"
+}
