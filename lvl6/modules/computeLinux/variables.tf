@@ -25,3 +25,4 @@ variable "nic_id" {
     default = ""
 }
 
+# Compute Linux
