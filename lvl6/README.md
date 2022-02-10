@@ -30,5 +30,5 @@ Set up a smal basic computing enviroment
 
 
 ### Inrastructure Vizulized
-![level6-infra](/img/lvl6-infra-1.png)
+![level6-infra](./img/lvl6-infra-1.png)
 
