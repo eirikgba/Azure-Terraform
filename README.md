@@ -12,7 +12,21 @@ Directory Structure
 | lvl6  | TBD |
 
 
-Commands to run the terraform code
+### Commands to Authenticate to Azure via a Microsoft Account
+
+```
+terraform -version
+az login
+az account show
+                    #Swap the <text in brackets>
+az account list --query "[?user.name=='<microsoft_account_email>'].{Name:name, ID:id, Default:isDefault}" --output Table
+az account set --subscription "<subscription_id_or_subscription_name>"
+```
+All the info on how to set up is in [Micorsoft docs](https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-windows-powershell?tabs=bash) describing how to install terraform on windows with azure PowerShell
+
+
+
+### Commands to run the terraform code
 ```
 terraform init
 terraform fmt                   //fomat the code in the dir for best readability and consistancy
