@@ -21,25 +21,19 @@ variable "" {
 }
 */
 
+##########################
+#   Web Page resources   #
+##########################
 # Virtual Network
 variable "vnet_web" {
     type    = string
     default = "webpage_vnet"
 }
 
-variable "vnet_compute" {
-    type    = string
-    default = "compute_vnet"
+variable "web_address_space" {
+    type    = list(string)
+    default = ["10.0.0.0/16"]
 }
-
-variable "vnet_compute_db" {
-    type    = string
-    default = "compute_db_vnet"
-}
-
-##########################
-#   Web Page resources   #
-##########################
 
 #Web Page subnets
 variable "subnet_web_server" {
@@ -47,26 +41,55 @@ variable "subnet_web_server" {
     default = "WebServerSubnet"
 }
 
+variable "web_server_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.1.0/24"]
+}
+
 variable "subnet_web_db" {
     type    = string
     default = "WebDatabaseSubnet"
 }
 
-variable "subnet_web_server" {
+variable "web_db_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.2.0/24"]
+}
+
+variable "subnet_web_lb" {
     type    = string
     default = "WebLoadBalancerSubnet"
 }
 
-# Number of Web servers
-variable "nr_web_server" {
-    type    = number
-    default = 2
+variable "web_lb_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.3.0/24"]
 }
 
 
 ##########################
 #   Compute resources    #
 ##########################
+# Virtual Network
+variable "vnet_compute" {
+    type    = string
+    default = "compute_vnet"
+}
+
+variable "compute_address_space" {
+    type    = list(string)
+    default = ["10.0.0.0/16"]
+}
+
+variable "vnet_compute_db" {
+    type    = string
+    default = "compute_db_vnet"
+}
+
+variable "compute_db_address_space" {
+    type    = list(string)
+    default = ["10.0.0.0/16"]
+}
 
 #Compute subnet
 variable "subnet_compute_linux" {
@@ -74,14 +97,38 @@ variable "subnet_compute_linux" {
     default = "LinuxComputeSubnet"
 }
 
+variable "compute_linux_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.3.0/24"]
+}
+
 variable "subnet_compute_windows" {
     type    = string
     default = "WindowsComputeSubnet"
 }
 
+variable "compute_windows_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.3.0/24"]
+}
+
 variable "subnet_compute_ml" {
     type        = string
     default     = "MLComputeSubnet"
-    description = "Machine Learning Subnet"
+    description = "MachineLearningSubnet"
 }
 
+variable "compute_ml_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.3.0/24"]
+}
+
+variable "subnet_compute_db" {
+    type        = string
+    default     = "MLComputeSubnet"
+    description = "ComputeDatabaseSubnet"
+}
+variable "compute_db_subnet_prefixes" {
+    type    = list(string)
+    default = ["10.0.3.0/24"]
+}

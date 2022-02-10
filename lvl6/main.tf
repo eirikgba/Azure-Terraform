@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "compute" {
 module "network" {
     source                      = "./modules/network"
     location                    = var.location
-    web_resource_group_name     = var.resource_group_name
+    web_resource_group_name     = var.web_resource_group_name
     compute_resource_group_name = var.compute_resource_group_name
 
     depends_on                  = [azurerm_resource_group.web, azurerm_resource_group.compute]
@@ -76,7 +76,7 @@ module "compute_linux" {
 }
 
 # Module for Machine Learning
-module "compute_linux" {
+module "compute_ml" {
     source                      = "./modules/computeML"
     location                    = var.location
     compute_resource_group_name = var.compute_resource_group_name
