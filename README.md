@@ -9,7 +9,8 @@ Directory Structure
 | lvl3  | Set up a VM Scaleset runing Linux |
 | lvl4  | Set up a basic WebPage infra <br> (VM, SQL server & db) |
 | lvl5  | Impoved WebPage <br> (AppService, SQL server & db, cache) |
-| lvl6  | TBD |
+| lvl6  | Web page and a basic computing infra |
+| lvl7  | Testing of Nested modules (resources from lvl6) |
 
 
 ### Commands to Authenticate to Azure via a Microsoft Account
