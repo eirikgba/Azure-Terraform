@@ -9,7 +9,7 @@ resource "azurerm_sql_server" "sql_web" {
     location                     = var.location
     version                      = "12.0"
     administrator_login          = "adminLogin"
-    administrator_login_password = random_string.password                         //Must have 1 secure long Pasword!!!
+    administrator_login_password = random_string.password.result                         //Must have 1 secure long Pasword!!!
 }
 
 

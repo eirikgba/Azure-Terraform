@@ -1,6 +1,7 @@
-resource "random_string" "password" {
+resource "random_password" "password" {
     length           = 16
     special          = true
+    override_special = "_%@"
 }
 
 resource "azurerm_windows_virtual_machine" "windows_vm" {
@@ -9,7 +10,7 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
     location            = var.location
     size                = "Standard_F2"
     admin_username      = "adminuser"
-    admin_password      = random_string.password                //Must have 1 secure long Pasword!!!
+    admin_password      = random_password.password.result                //Must have 1 secure long Pasword!!!
     network_interface_ids = [
         var.nic_id,
     ]
