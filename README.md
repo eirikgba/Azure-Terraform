@@ -33,8 +33,10 @@ terraform init
 terraform fmt                   //fomat the code in the dir for best readability and consistancy
 terrafomr validate
 terraform plan                  //Shows what the code will do
- terraform graph                //show the dependecies
+  terraform plan -target module.<module name>   //Show what the code will do for the specified module
+  terraform graph                //show the dependecies
 terraform aplly                 //Run the Code
+terraform refresh
 terraform output
 terraform show                  //the current state 
 terraform state list
